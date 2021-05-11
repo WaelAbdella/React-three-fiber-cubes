@@ -80,6 +80,7 @@ function App() {
           />
           <SpinningMesh position={[-2, 1, -5]} color='pink' speed={6} />
           <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
+          <SpinningMesh position={[6, 1, -3]} color='pink' speed={6} />
         </group>
         <OrbitControls />
       </Canvas>
