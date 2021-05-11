@@ -1,7 +1,9 @@
 import './App.scss';
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
-import { MeshStandardMaterial } from 'three';
+
+
+
 const SpinningMesh = ({ position, color, args }) => {
   const mesh = useRef(null);
   useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
@@ -17,7 +19,7 @@ function App() {
   return (
     <>
       <Canvas
-        shadowMap
+        shadows
         colorManagement
         camera={{ position: [-5, 2, 10], fov: 60 }}
       >
@@ -44,7 +46,7 @@ function App() {
             position={[0, -3, 0]}
           >
             <planeBufferGeometry attach='geometry' args={[100, 100]} />
-            <meshStandardMaterial attach='material' />
+            <shadowMaterial attach='material' opacity={0.3} />
           </mesh>
         </group>
 
